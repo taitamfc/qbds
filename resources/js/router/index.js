@@ -3,10 +3,16 @@ import { createRouter, createWebHistory } from 'vue-router'
 const LoginComponent = () => import('../components/users/LoginComponent.vue')
 const ForgotPasswordComponent = () => import('../components/users/ForgotPasswordComponent.vue')
 const ProfileComponent = () => import('../components/users/ProfileComponent.vue')
+const HomeComponent = () => import('../components/HomeComponent.vue')
 
 const routes = [
     {
         path: '/',
+        name: 'home',
+        component: HomeComponent
+    },
+    {
+        path: '/login',
         name: 'users.login',
         component: LoginComponent
     },
