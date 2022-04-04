@@ -1,28 +1,36 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui">
-    <meta name="csrf-token" value="{{ csrf_token() }}"/>
-    <title>Laravel 9 Vue JS CRUD Example  - Tutsmake</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('mobile/vendor/swiper/swiper.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('mobile/css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Mobilekit Mobile UI Kit</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="{{ asset('mobile/assets/img/favicon.png')}}" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('mobile/assets/img/icon/192x192.png')}}">
+    <link rel="stylesheet" href="{{ asset('mobile/assets/css/style.css')}}">
+    <link rel="manifest" href="mobile/__manifest.json">
     <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet"/>
-    <style>
-        .bg-light {
-            background-color: #eae9e9 !important;
-        }
-    </style>
 </head>
-<body>
-<div id="app">
-</div>
-<script src="{{ asset('mobile/vendor/jquery/jquery-3.5.1.min.js') }}"></script>
-<script src="{{ asset('mobile/vendor/jquery/jquery.validate.min.js') }}" ></script>
-<script src="{{ asset('mobile/vendor/swiper/swiper.min.js') }}"></script>
-<script src="{{ asset('mobile/js/jquery.custom.js') }}"></script>
-<script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+
+<body class="bg-white">
+    <div id="app"></div>
+    <!-- ============== Js Files ==============  -->
+    <!-- Bootstrap -->
+    <script src="{{ asset('mobile/assets/js/lib/bootstrap.min.js')}}"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Splide -->
+    <script src="{{ asset('mobile/assets/js/plugins/splide/splide.min.js')}}"></script>
+    <!-- ProgressBar js -->
+    <script src="{{ asset('mobile/assets/js/plugins/progressbar-js/progressbar.min.js')}}"></script>
+    <!-- Base Js File -->
+    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 </body>
+
 </html>

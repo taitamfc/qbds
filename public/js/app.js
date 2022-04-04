@@ -19720,7 +19720,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
-
+ //{ path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 
 var LoginComponent = function LoginComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_users_LoginComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/users/LoginComponent.vue */ "./resources/js/components/users/LoginComponent.vue"));
@@ -19738,10 +19738,18 @@ var HomeComponent = function HomeComponent() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_HomeComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/HomeComponent.vue */ "./resources/js/components/HomeComponent.vue"));
 };
 
+var ProductsComponent = function ProductsComponent() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_products_ProductsComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/products/ProductsComponent.vue */ "./resources/js/components/products/ProductsComponent.vue"));
+};
+
+var ProductDetailComponent = function ProductDetailComponent() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_products_ProductDetailComponent_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/products/ProductDetailComponent.vue */ "./resources/js/components/products/ProductDetailComponent.vue"));
+};
+
 var routes = [{
   path: '/',
   name: 'home',
-  component: HomeComponent
+  component: ProfileComponent
 }, {
   path: '/login',
   name: 'users.login',
@@ -19754,6 +19762,14 @@ var routes = [{
   path: '/profile',
   name: 'users.profile',
   component: ProfileComponent
+}, {
+  path: '/products',
+  name: 'products.index',
+  component: ProductsComponent
+}, {
+  path: '/products/:id',
+  name: 'products.show',
+  component: ProductDetailComponent
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(),
@@ -41076,7 +41092,7 @@ function compileToFunction(template, options) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_users_LoginComponent_vue":1,"resources_js_components_users_ForgotPasswordComponent_vue":1,"resources_js_components_users_ProfileComponent_vue":1,"resources_js_components_HomeComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_users_LoginComponent_vue":1,"resources_js_components_users_ForgotPasswordComponent_vue":1,"resources_js_components_users_ProfileComponent_vue":1,"resources_js_components_HomeComponent_vue":1,"resources_js_components_products_ProductsComponent_vue":1,"resources_js_components_products_ProductDetailComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

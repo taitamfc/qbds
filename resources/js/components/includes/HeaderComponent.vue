@@ -1,34 +1,62 @@
 <template>
   <!-- HEADER -->
-    <header class="header header--fixed" v-if="layout == 'login'">
-      <div class="header__inner">
-        <div class="header__icon">
-          <a @click="$router.go(-1)"
-            ><img
-              src="mobile/assets/images/icons/white/arrow-back.svg"
-              alt=""
-              title=""
-          /></a>
-        </div>
-      </div>
-    </header>
+  <div class="appHeader no-border transparent position-absolute" v-if="layout == 'login'">
+    <div class="left">
+      <a
+        @click="$router.go(-1)"
+        href="javascript:;"
+        class="headerButton goBack"
+      >
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </a>
+    </div>
+    <div class="pageTitle"></div>
+    <!-- <div class="right">
+      <a href="page-login.html" class="headerButton"> Login </a>
+    </div> -->
+  </div>
 
-    <header class="header header--page header--fixed" v-if="layout == 'main'">	
-		  <div class="header__inner">	
-			  <div class="header__icon header__icon--menu open-panel" data-panel="left"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-          <div class="header__logo header__logo--text">
-            <a href="#">Mobio<strong>Kit</strong></a>
-          </div>	
-          <div class="header__icon open-panel" data-panel="right">
-              <img src="mobile/assets/images/icons/white/search.svg" alt="" title=""/>
-          </div>
-      </div>
-	  </header>
+  <div class="appHeader bg-primary text-light" v-if="layout == 'single'">
+    <div class="left">
+      <a
+        @click="$router.go(-1)"
+        href="javascript:;"
+        class="headerButton goBack"
+      >
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </a>
+    </div>
+    <div class="pageTitle">{{ title }}</div>
+    <div class="right">
+      <a href="#" class="headerButton toggle-searchbox" v-if="search == 1">
+        <ion-icon name="search-outline"></ion-icon>
+      </a>
+    </div>
+  </div>
+
+  <div class="appHeader bg-primary  text-light" v-if="layout == 'main'">
+    <div class="left">
+      <a
+        href="#"
+        class="headerButton"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebarPanel"
+      >
+        <ion-icon name="menu-outline"></ion-icon>
+      </a>
+    </div>
+    <div class="pageTitle">{{ title }}</div>
+    <div class="right">
+      <a href="#" class="headerButton toggle-searchbox" v-if="search == 1">
+        <ion-icon name="search-outline"></ion-icon>
+      </a>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['layout'],
+  props: ["layout","title","search"],
 };
 </script>
 

@@ -1,55 +1,78 @@
 <template>
-  <div class="page page--login" data-page="login">
-    
-    <div class="login">
-      <div class="login__content">
-        <h2 class="login__title">Welcome back</h2>
-        <p class="login__text">Login to your account</p>
-        <div class="login-form">
-          <form id="LoginForm" method="post" action="main.html">
-            <div class="login-form__row">
-              <label class="login-form__label">Username</label>
+  <!-- App Capsule -->
+  <div id="appCapsule" class="pt-0">
+    <div class="login-form mt-1">
+      <div class="section">
+        <img
+          src="mobile/assets/img/sample/photo/vector4.png"
+          alt="image"
+          class="form-image"
+        />
+      </div>
+      <div class="section mt-1">
+        <h1>Get started</h1>
+        <h4>Fill the form to log in</h4>
+      </div>
+      <div class="section mt-1 mb-5">
+        <form action="app-pages.html">
+          <div class="form-group boxed">
+            <div class="input-wrapper">
               <input
-                type="text"
-                name="Username"
-                value=""
-                class="login-form__input required"
+                type="email"
+                class="form-control"
+                id="email1"
+                placeholder="Email address"
               />
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
             </div>
-            <div class="login-form__row">
-              <label class="login-form__label">Password</label>
+          </div>
+
+          <div class="form-group boxed">
+            <div class="input-wrapper">
               <input
                 type="password"
-                name="password"
-                value=""
-                class="login-form__input required"
+                class="form-control"
+                id="password1"
+                placeholder="Password"
+                autocomplete="off"
               />
+              <i class="clear-input">
+                <ion-icon name="close-circle"></ion-icon>
+              </i>
             </div>
-            <div class="login-form__row">
-              <input
-                type="submit"
-                name="submit"
-                class="login-form__submit button button--main button--full"
-                id="submit"
-                value="SIGN IN"
-              />
-            </div>
-          </form>
-          <div class="login-form__forgot-pass">
-            <router-link to="/forgot-password">Forgot Password?</router-link>
           </div>
-        </div>
+
+          <div class="form-links mt-2">
+            <div>
+              
+            </div>
+            <div>
+              <router-link :to="{ name: 'users.forgot-password', params: {}}" class="text-muted">
+                Forgot Password?
+              </router-link>
+            </div>
+          </div>
+
+          <div class="form-button-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              Log in
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+  <!-- * App Capsule -->
 </template>
  
 <script>
-import HeaderComponent from './../includes/HeaderComponent.vue'
+import HeaderComponent from "./../includes/HeaderComponent.vue";
 export default {
   name: "Login",
-  components: { 
-    HeaderComponent 
-  }
+  components: {
+    HeaderComponent,
+  },
 };
 </script>

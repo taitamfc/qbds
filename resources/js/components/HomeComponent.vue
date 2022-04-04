@@ -1,12 +1,11 @@
 <template>
-  <div class="page page--main">
-    <HeaderComponent layout="main"/>  
-    
-  </div>
+   <div id="loader" style="/* display: none; */">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
 </template>
  
 <script>
-import HeaderComponent from '../includes/HeaderComponent.vue'
+import HeaderComponent from './includes/HeaderComponent.vue'
 export default {
   components: { 
     HeaderComponent 
