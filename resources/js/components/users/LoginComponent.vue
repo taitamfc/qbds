@@ -2,26 +2,29 @@
   <!-- App Capsule -->
   <div id="appCapsule" class="pt-0">
     <div class="login-form mt-1">
+      <div class="section mt-1">
+        <h1>Đăng Nhập</h1>
+        <h4>Vui lòng đăng nhập vào hệ thống</h4>
+      </div>
       <div class="section">
         <img
-          src="mobile/assets/img/sample/photo/vector4.png"
+          src="/mobile/assets/img/logo.png"
           alt="image"
           class="form-image"
         />
       </div>
-      <div class="section mt-1">
-        <h1>Get started</h1>
-        <h4>Fill the form to log in</h4>
-      </div>
+      
       <div class="section mt-1 mb-5">
-        <form action="app-pages.html">
+        <form @submit.prevent="authenticate" autocomplete="off">
           <div class="form-group boxed">
             <div class="input-wrapper">
+              <label class="form-label">Số Điện Thoại</label>
               <input
                 type="email"
                 class="form-control"
-                id="email1"
-                placeholder="Email address"
+                v-model="form.email"
+                placeholder="Số Điện Thoại"
+                autocomplete="off"
               />
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
@@ -31,11 +34,12 @@
 
           <div class="form-group boxed">
             <div class="input-wrapper">
+              <label class="form-label">Mật Khẩu</label>
               <input
                 type="password"
                 class="form-control"
-                id="password1"
-                placeholder="Password"
+                v-model="form.password"
+                placeholder="Mật Khẩu"
                 autocomplete="off"
               />
               <i class="clear-input">
@@ -50,14 +54,14 @@
             </div>
             <div>
               <router-link :to="{ name: 'users.forgot-password', params: {}}" class="text-muted">
-                Forgot Password?
+                Quên mật khẩu ?
               </router-link>
             </div>
           </div>
 
           <div class="form-button-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">
-              Log in
+            <button type="submit" class="btn btn-warning btn-block btn-lg">
+              Đăng Nhập
             </button>
           </div>
         </form>
@@ -69,10 +73,37 @@
  
 <script>
 import HeaderComponent from "./../includes/HeaderComponent.vue";
+import { login } from '../../helpers/auth';
+
 export default {
   name: "Login",
+  data() {
+      return {
+          form: {
+              email: '',
+              password: '',
+          },
+          type: 'login',
+          error: null,
+      }
+  },
   components: {
     HeaderComponent,
+  },
+  methods: {
+      authenticate() {
+          this.$store.dispatch("LOGIN");
+
+          login(this.$data.form)
+          .then(res => {
+              this.$store.commit("LOGIN_SUCCESS", res);
+              this.$router.push({path: '/'});
+          })
+          .catch(err => {
+              this.$store.commit("LOGIN_FAILED", {err})
+              this.showAlert(this.authError, 'error');
+          })
+      },
   },
 };
 </script>

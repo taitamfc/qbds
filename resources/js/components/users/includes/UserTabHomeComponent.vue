@@ -20,7 +20,7 @@
       <router-link :to="{ name: 'home', params: {} }" class="item">
         <div class="icon-box bg-secondary">
           <ion-icon
-            name="videocam-outline"
+            name="people-outline"
             role="img"
             class="md hydrated"
             aria-label="videocam outline"

@@ -9,25 +9,24 @@
 
     <router-link :to="{ name: 'products.index', params: {} }" class="item" active-class="active">
       <div class="col">
-        <ion-icon name="cube-outline"></ion-icon>
+        <ion-icon name="apps-outline"></ion-icon>
       </div>
     </router-link>
-    <a href="page-chat.html" class="item">
+     <router-link :to="{ name: 'collaborators.index', params: {} }" class="item" active-class="active">
       <div class="col">
-        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-        <span class="badge badge-danger">5</span>
+        <ion-icon name="people-outline"></ion-icon>
       </div>
-    </a>
-    <a href="app-pages.html" class="item">
+    </router-link>
+    <router-link :to="{ name: 'notifications.index', params: {} }" class="item" active-class="active">
       <div class="col">
-        <ion-icon name="layers-outline"></ion-icon>
+        <ion-icon name="notifications-outline"></ion-icon>
       </div>
-    </a>
-    <a href="#sidebarPanel" class="item" data-bs-toggle="offcanvas">
+    </router-link>
+    <router-link :to="{ name: 'users.index', params: {} }" class="item" active-class="active">
       <div class="col">
-        <ion-icon name="menu-outline"></ion-icon>
+        <ion-icon name="settings-outline"></ion-icon>
       </div>
-    </a>
+    </router-link>
   </div>
   <!-- * App Bottom Menu -->
 </template>
